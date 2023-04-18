@@ -1,17 +1,57 @@
-# Dockerizing DRF Cinema
-# Set Up
-I'm sorry, section is under construction, please come back after several days after Easter Break
-# Features
-• JWT authenticated Admin panel /admin/
+# DRF Cinema with Docker
 
- •Documentation is located at /api/doc/swagger/
+API of basic cinema logic using Django REST framework
 
-• Managing orders and tickets
 
-• Creating movies with genres, actors
+## Using DRF & PostgreSQL:
+Python 3 & PostgresSQL must be installed before
 
-• Creating cinema 
+Create db using pgAdmin
+```shell
+git clone https://github.com/ada-krav/DRF_cinema_with_docker
+cd cinema_service
+python -m venv venv
+venv\Scripts\activate (on Windows)
+source venv/bin/activate (on macOS)
+pip install -r requirements.txt
 
-• Adding movie sessions
+export DB_HOST=<use your DB_HOST>
+export DB_NAME=<use your DB_NAME>
+export DB_USER=<use your DB_USER>
+export DB_PASSWORD=<use your DB_PASSWORD>
 
-• Filtering movies and movie sessions
+python manage.py migrate
+python manage.py runserver
+```
+## Using Docker:
+Python 3 & Docker must be installed
+
+```shell
+git clone https://github.com/ada-krav/DRF_cinema_with_docker
+cd cinema_service
+docker-compose build
+docker-compose up
+```
+
+
+## How to get access in both cases:
+
+*  create new user - http://localhost:8000/api/user/register/
+*  get JWT Token - http://localhost:8000/api/user/token/
+
+## Features
+* JWT authenticated 
+
+* Admin panel: /admin/
+
+* Documentation: /api/doc/swagger/
+
+* Managing orders and tickets
+
+* Creating movies with genres, actors
+
+* Creating cinema 
+
+* Adding movie sessions
+
+* Filtering movies and movie sessions
