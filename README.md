@@ -15,6 +15,9 @@ venv\Scripts\activate (on Windows)
 source venv/bin/activate (on macOS)
 pip install -r requirements.txt
 
+export DJANGO_SECRET_KEY=<use your DJANGO_SECRET_KEY>
+export DEBUG=<True or False>
+export ALLOWED_HOSTS=<use your ALLOWED_HOSTS>
 export DB_HOST=<use your DB_HOST>
 export DB_NAME=<use your DB_NAME>
 export DB_USER=<use your DB_USER>
